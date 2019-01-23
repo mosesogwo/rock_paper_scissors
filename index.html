@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock, Paper, Scissors</title>
+    </head>
+    <body>
+        <script>
+        function computerPlay() {
+            let options = ["Rock", "Paper", "Scissors"];
+            let computerChoice = options[Math.floor(Math.random()*options.length)];
+            return computerChoice;
+        }
+        
+        function play(computerSelection, playerSelection) {
+            computerSelection = computerPlay().toLowerCase();
+            playerSelection = prompt("Make your choice - Rock, Paper or Scissors?").toLowerCase();
+            if (computerSelection == playerSelection) {
+                console.log("Tie! Play another round")
+            }
+            else if (computerSelection!= playerSelection) {
+
+            switch(playerSelection){
+                case "rock":
+                if (computerSelection == "scissors") {
+                    console.log("You win! Rock crushes scissors");
+                    break;
+                } else if (computerSelection == "paper") {
+                    console.log("You lose!, Paper beats rock");
+                    break;
+                }
+
+                case "paper":
+                if (computerSelection == "scissors") {
+                    console.log("You lose! Scissors cuts paper.");
+                    break;
+                } else if (computerSelection == "rock") {
+                    console.log("You win! Paper beats rock");
+                    break;
+                }
+
+                case "scissors":
+                if (computerSelection == "rock") {
+                    console.log("You lose! Rock crushes scissors");
+                    break;
+                } else if (computerSelection == "paper") {
+                    console.log("You win! Scissors cuts paper")
+                    break;
+                }
+            }
+        }
+    }
+        
+        
+        </script>
+    </body>
+</html>
